@@ -1,12 +1,18 @@
-<!DOCTYPE html>
+<!--DOCTYPE html>
 <html>
     <head>
-        <title>Form {{ $title }} Produk</title>
+        <title>Form(diisi double kurung kurawal {title}) Produk</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body style="width:95%">
-    <div class="row justify-content-center" style="margin-top:13%">
+    <div class="row justify-content-center" style="margin-top:13%"-->
+@extends('template')
+
+@section('title')
+        {{ $title }} Produk
+
+@section('content')
     <div class="col-3">
         <h4>Form {{ $title }} Produk</h4>
         <form class="border" style="padding:20px" method="POST" action="/{{ $action }}">
@@ -25,6 +31,7 @@
     </div>
 </form>
 </div>
-</div>
+@endsection
+<!--/div>
 </body>
-</html>
+</html-->
