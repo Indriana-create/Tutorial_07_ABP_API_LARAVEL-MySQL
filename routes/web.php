@@ -6,6 +6,7 @@ use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Auth;  //bisa pakai use Auth;
 
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -16,7 +17,7 @@ Route::get('/login', function () {
         //if (session()->has('email')) return redirect('/product');
         if (Auth::check()) return redirect('/product');
         return view('login');
-    });
+    })->name('login');
 
 Route::get('/logout', function () {
         //session()->flush();   //menghapus semua data session
@@ -25,3 +26,4 @@ Route::get('/logout', function () {
     });
 
 Route::post('/auth', [SiteController::class, 'auth']);
+
